@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgProduto"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -25,18 +25,18 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="[NOME PRODUTO]"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintStart_toEndOf="@+id/imgProduto"
+        app:layout_constraintTop_toTopOf="@+id/imgProduto" />
 
     <TextView
-        android:id="@+id/txtCódigo"
+        android:id="@+id/txtCodigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="[CÓDIGO]"
         android:textSize="8dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imgProduto"
         app:layout_constraintTop_toBottomOf="@+id/txtProduto" />
 
     <Button

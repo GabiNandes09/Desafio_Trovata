@@ -30,6 +30,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_IE = "IE";
     private static String DATABASE_PATH = "";
     private final Context mContext;
+    public static final String TABLE_PRODUTO = "PRODUTO";
+    public static final String[] COLUMN_PRODUTO_EMPRESAARRAY = new String[]{"EMPRESA"};
+    public static final String COLUMN_PRODUTO_EMPRESA = "EMPRESA";
+    public static final String COLUMN_PRODUTO_PRODUTO = "PRODUTO";
+    public static final String COLUMN_PRODUTO_DESCRICAO = "DESCRICAO_PRODUTO";
+    public static final String COLUMN_PRODUTO_APELIDO = "APELIDO_PRODUTO";
+    public static final String COLUMN_PRODUTO_GRUPO = "GRUPO_PRODUTO";
+    public static final String COLUMN_PRODUTO_SUBGRUPO = "SUBGRUPO_PRODUTO";
+    public static final String COLUMN_PRODUTO_SITUACAO = "SITUACAO";
+    public static final String COLUMN_PRODUTO_PESO = "PESO_LIQUIDO";
+    public static final String COLUMN_PRODUTO_CLASSIFICACAO = "CLASSIFICACAO_FISCAL";
+    public static final String COLUMN_PRODUTO_CODIGOBARRAS = "CODIGO_BARRAS";
+    public static final String COLUMN_PRODUTO_COLECAO = "COLECAO";
+
 
     private SQLiteDatabase mDataBase;
 

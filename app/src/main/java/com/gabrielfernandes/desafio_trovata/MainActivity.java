@@ -2,6 +2,7 @@ package com.gabrielfernandes.desafio_trovata;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -62,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProductListActivity.class);
+                Empresa selectedEmpresa = (Empresa) spinnerEmpresas.getSelectedItem();
+                intent.putExtra("ID", selectedEmpresa.getId());
+                Log.i("IDVALUE", String.valueOf(selectedEmpresa.getId()));
+                intent.putExtra("Nome", selectedEmpresa.getNomeFantasia());
                 startActivity(intent);
             }
         });
