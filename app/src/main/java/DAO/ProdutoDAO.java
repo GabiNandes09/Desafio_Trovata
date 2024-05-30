@@ -33,10 +33,10 @@ public class ProdutoDAO {
         dbHelper.close();
     }
 
-    public List<Produto> getAllProdutos(int id){
+    public List<Produto> getAllProdutos(int id, String ordem){
         List<Produto> produtos = new ArrayList<>();
         Cursor cursor = database.query(DatabaseHelper.TABLE_PRODUTO, null, DatabaseHelper.COLUMN_PRODUTO_EMPRESA +"=" + id,
-                null, null, null, null);
+                null, null, null, ordem);
 
         if (cursor.moveToFirst()){
             Log.i("NTESTE", "Entoru no if");

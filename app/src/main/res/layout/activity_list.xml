@@ -21,12 +21,12 @@
         android:layout_width="0dp"
         android:layout_height="240dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeEmpresa"
+        app:layout_constraintTop_toBottomOf="@+id/spFiltro"
         tools:itemCount="5"
         tools:listitem="@layout/item_list" />
 
@@ -56,5 +56,23 @@
         app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spFiltro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spFiltro"
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+    <Spinner
+        android:id="@+id/spFiltro"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeEmpresa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

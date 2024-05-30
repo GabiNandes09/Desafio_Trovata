@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <Spinner
+        android:id="@+id/spFiltro"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        tools:layout_editor_absoluteX="436dp"
+        tools:layout_editor_absoluteY="165dp" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"

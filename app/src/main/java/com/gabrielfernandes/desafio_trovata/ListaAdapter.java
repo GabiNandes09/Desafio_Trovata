@@ -57,5 +57,10 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
         return produtos.size();
     }
 
+    public void updateData(List<Produto> newProdutos) {
+        this.produtos = newProdutos;
+        notifyDataSetChanged();
+    }
+
 }
 
