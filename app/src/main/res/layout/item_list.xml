@@ -5,53 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imgProduto"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@android:drawable/ic_menu_crop" />
-
-    <TextView
-        android:id="@+id/txtProduto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="[NOME PRODUTO]"
-        app:layout_constraintStart_toEndOf="@+id/imgProduto"
-        app:layout_constraintTop_toTopOf="@+id/imgProduto" />
-
     <TextView
         android:id="@+id/txtCodigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="5dp"
         android:text="[CÓDIGO]"
         android:textSize="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgProduto"
+        app:layout_constraintStart_toEndOf="@+id/imgProduto" />
+
+    <ImageView
+        android:id="@+id/imgProduto"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_crop" />
+
+    <TextView
+        android:id="@+id/txtProduto"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:text="[NOME PRODUTO]"
+        android:textSize="10dp"
         app:layout_constraintStart_toEndOf="@+id/imgProduto"
-        app:layout_constraintTop_toBottomOf="@+id/txtProduto" />
+        app:layout_constraintTop_toTopOf="@+id/imgProduto" />
 
     <Button
         android:id="@+id/btnDeletarProduto"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="64dp"
         android:background="@android:drawable/ic_menu_edit"
-        tools:layout_editor_absoluteX="365dp"
-        tools:layout_editor_absoluteY="8dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnDeletarProduto"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@android:drawable/ic_menu_delete"
-        tools:layout_editor_absoluteX="365dp"
-        tools:layout_editor_absoluteY="43dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtGrupo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="[GRUPO]"
+        android:textSize="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtCodigo"
+        app:layout_constraintStart_toEndOf="@+id/txtCodigo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,12 +33,13 @@ public class ProdutoDAO {
         dbHelper.close();
     }
 
-    public List<Produto> getAllProdutos(String id){
+    public List<Produto> getAllProdutos(int id){
         List<Produto> produtos = new ArrayList<>();
-        Cursor cursor = database.query(DatabaseHelper.TABLE_PRODUTO, DatabaseHelper.COLUMN_PRODUTO_EMPRESAARRAY, id,
+        Cursor cursor = database.query(DatabaseHelper.TABLE_PRODUTO, null, DatabaseHelper.COLUMN_PRODUTO_EMPRESA +"=" + id,
                 null, null, null, null);
 
         if (cursor.moveToFirst()){
+            Log.i("NTESTE", "Entoru no if");
             do {
                 Produto produto = new Produto();
                 produto.setEmpresa(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_PRODUTO_EMPRESA)));

@@ -27,6 +27,7 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
 
         TextView txtProduto = itemView.findViewById(R.id.txtProduto);
         TextView txtCodigo = itemView.findViewById(R.id.txtCodigo);
+        TextView txtGrupo = itemView.findViewById(R.id.txtGrupo);
         ImageView imgProduto = itemView.findViewById(R.id.imgProduto);
 
 
@@ -46,6 +47,8 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
     public void onBindViewHolder(@NonNull ListaViewHolder holder, int position) {
         Produto nome = produtos.get(position);
         holder.txtProduto.setText(nome.getDescricao());
+        holder.txtCodigo.setText(String.valueOf(nome.getProduto()));
+        holder.txtGrupo.setText(String.valueOf(nome.getGrupo()));
 
     }
 

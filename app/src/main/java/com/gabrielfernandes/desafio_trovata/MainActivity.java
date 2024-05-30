@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ProductListActivity.class);
                 Empresa selectedEmpresa = (Empresa) spinnerEmpresas.getSelectedItem();
                 intent.putExtra("ID", selectedEmpresa.getId());
-                Log.i("IDVALUE", String.valueOf(selectedEmpresa.getId()));
                 intent.putExtra("Nome", selectedEmpresa.getNomeFantasia());
                 startActivity(intent);
             }
