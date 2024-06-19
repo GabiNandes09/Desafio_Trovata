@@ -39,7 +39,7 @@ public class ProdutoDAO {
                 null, null, null, ordem);
 
         if (cursor.moveToFirst()){
-            Log.i("NTESTE", "Entoru no if");
+            Log.i("NTESTE", "Entrou no if");
             do {
                 Produto produto = new Produto();
                 produto.setEmpresa(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_PRODUTO_EMPRESA)));
