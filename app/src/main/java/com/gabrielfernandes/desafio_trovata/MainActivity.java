@@ -1,5 +1,6 @@
 package com.gabrielfernandes.desafio_trovata;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
@@ -59,6 +61,17 @@ public class MainActivity extends AppCompatActivity {
     }
     class DatabaseTask extends AsyncTask<Void, Void, List<Empresa>> {
 
+        private ProgressDialog progressDialog;
+
+        @Override
+        protected  void onPreExecute(){
+            super.onPreExecute();
+            progressDialog = new ProgressDialog(MainActivity.this);
+            progressDialog.setMessage("Carregando empresas...");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+        }
+
         @Override
         protected List<Empresa> doInBackground(Void... voids) {
 
@@ -77,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<Empresa> empresas) {
+            progressDialog.dismiss();
             super.onPostExecute(empresas);
             ArrayAdapter<Empresa> adapter = new ArrayAdapter<>(MainActivity.this,
                     android.R.layout.simple_spinner_item, empresas);
