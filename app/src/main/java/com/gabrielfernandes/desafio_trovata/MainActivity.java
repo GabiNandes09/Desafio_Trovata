@@ -1,6 +1,7 @@
 package com.gabrielfernandes.desafio_trovata;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Agora setContentView() é chamado primeiro
         spinnerEmpresas = findViewById(R.id.spinnerEmpresas);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -42,21 +42,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
-        try {
-            databaseHelper.createDatabase();
-            databaseHelper.openDatabase();
-        } catch (IOException e){
-            throw new Error("Erro ao copiar database");
-        }
+        new DatabaseTask().execute();
 
-        empresaDAO = new EmpresaDAO(this);
-
-        List<Empresa> empresas = empresaDAO.getAllEmpresas();
-        ArrayAdapter<Empresa> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, empresas);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerEmpresas.setAdapter(adapter);
 
         btnContinuar = findViewById(R.id.btnContinuar);
         btnContinuar.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +56,33 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    class DatabaseTask extends AsyncTask<Void, Void, List<Empresa>> {
+
+        @Override
+        protected List<Empresa> doInBackground(Void... voids) {
+
+            DatabaseHelper databaseHelper = new DatabaseHelper(MainActivity.this);
+            try {
+                databaseHelper.createDatabase();
+                databaseHelper.openDatabase();
+            } catch (IOException e) {
+                throw new Error("Erro ao copiar database");
+            }
+            databaseHelper.close();
+            empresaDAO = new EmpresaDAO(MainActivity.this);
+
+            return empresaDAO.getAllEmpresas();
+        }
+
+        @Override
+        protected void onPostExecute(List<Empresa> empresas) {
+            super.onPostExecute(empresas);
+            ArrayAdapter<Empresa> adapter = new ArrayAdapter<>(MainActivity.this,
+                    android.R.layout.simple_spinner_item, empresas);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerEmpresas.setAdapter(adapter);
+        }
     }
 
 }
