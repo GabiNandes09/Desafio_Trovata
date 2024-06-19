@@ -26,6 +26,7 @@ public class EmpresaDAO {
         }
         database = dbHelper.getWritableDatabase();
     }
+    public EmpresaDAO(){}
 
     public void close() {
         dbHelper.close();
@@ -56,4 +57,5 @@ public class EmpresaDAO {
         cursor.close();
         return empresas;
     }
+
 }
