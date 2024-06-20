@@ -1,12 +1,13 @@
 package com.gabrielfernandes.desafio_trovata;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -15,12 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import DAO.ProdutoDAO;
 import Database.DatabaseHelper;
-import Models.Empresa;
 import Models.Produto;
 
 public class ProductListActivity extends AppCompatActivity {
@@ -32,6 +31,7 @@ public class ProductListActivity extends AppCompatActivity {
     ProdutoDAO produtoDAO;
     ListaAdapter adapter;
     String[] ordem = {DatabaseHelper.COLUMN_PRODUTO_DESCRICAO + " ASC"};
+    Button btnAdicionar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class ProductListActivity extends AppCompatActivity {
         spFiltro = findViewById(R.id.spFiltro);
         txtNomeEmpresa = findViewById(R.id.txtNomeEmpresa);
         rvProdutos = findViewById(R.id.rvProdutos);
+        btnAdicionar = findViewById(R.id.btnAdicionar);
 
         String[] filtros = {"A - Z", "Z - A", "Código"};
         ArrayAdapter<String> adapterFiltro = new ArrayAdapter<>(this,
@@ -80,6 +81,14 @@ public class ProductListActivity extends AppCompatActivity {
                 new DatabaseTasks().execute(bundle.getInt("ID"));
             }
 
+        });
+        btnAdicionar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductListActivity.this,
+                        cadastrar_produto_activity_p1.class);
+                startActivity(intent);
+            }
         });
     }
 

@@ -1,5 +1,7 @@
 package Models;
 
+import android.media.Image;
+
 public class Produto {
     private Integer empresa;
     private Integer produto;
@@ -12,6 +14,7 @@ public class Produto {
     private Integer classificacao;
     private Integer codigoDeBarras;
     private Integer colecao;
+    private Image img;
 
     public Integer getEmpresa() {
         return empresa;

@@ -1,6 +1,9 @@
 package DAO;
 
 
+import static Database.DatabaseHelper.TABLE_PRODUTO;
+
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -32,10 +35,27 @@ public class ProdutoDAO {
     public void close() {
         dbHelper.close();
     }
+    //CRIAR - CREATE
+    public void cadatrarProduto (Produto produto){
+        ContentValues values = new ContentValues();
+        values.put("produto", produto.getProduto());
+        values.put("descricao", produto.getDescricao());
+        values.put("apelido", produto.getApelido());
+        values.put("grupo", produto.getGrupo());
+        values.put("subgrupo", produto.getSubgrupo());
+        values.put("situacao", produto.getSituacao());
+        values.put("peso", produto.getPeso());
+        values.put("classificacao", produto.getClassificacao());
+        values.put("codigoDeBarras", produto.getCodigoDeBarras());
+        values.put("colecao", produto.getColecao());
 
+        database.insert(TABLE_PRODUTO, null, values);
+    }
+
+    //LISTAR - READ
     public List<Produto> getAllProdutos(int id, String ordem){
         List<Produto> produtos = new ArrayList<>();
-        Cursor cursor = database.query(DatabaseHelper.TABLE_PRODUTO, null, DatabaseHelper.COLUMN_PRODUTO_EMPRESA +"=" + id,
+        Cursor cursor = database.query(TABLE_PRODUTO, null, DatabaseHelper.COLUMN_PRODUTO_EMPRESA +"=" + id,
                 null, null, null, ordem);
 
         if (cursor.moveToFirst()){
@@ -60,4 +80,13 @@ public class ProdutoDAO {
         return produtos;
     }
 
+    //ATUALIZAR - UPDATE
+    public void atualizarProduto (Produto produto){
+
+    }
+
+    //DELETAR - DELETE
+    public void deletarProduto (Produto produto){
+
+    }
 }

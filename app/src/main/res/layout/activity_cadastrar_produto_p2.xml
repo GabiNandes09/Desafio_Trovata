@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cadastrar_produto_activity_p2">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="SUBGRUPO:"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtSubGrupo"
+        app:layout_constraintEnd_toStartOf="@+id/etxtSubGrupo"
+        app:layout_constraintTop_toTopOf="@+id/etxtSubGrupo" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="PESO:"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtPeso"
+        app:layout_constraintEnd_toStartOf="@+id/etxtPeso"
+        app:layout_constraintTop_toTopOf="@+id/etxtPeso" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="CLASSIFICACAO:"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtClasFical"
+        app:layout_constraintEnd_toStartOf="@+id/etxtClasFical"
+        app:layout_constraintTop_toTopOf="@+id/etxtClasFical" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="CODIGO:"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtCodigoBarras"
+        app:layout_constraintEnd_toStartOf="@+id/etxtCodigoBarras"
+        app:layout_constraintTop_toTopOf="@+id/etxtCodigoBarras" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="COLECAO:"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtColecao"
+        app:layout_constraintEnd_toStartOf="@+id/etxtColecao"
+        app:layout_constraintTop_toTopOf="@+id/etxtColecao" />
+
+    <EditText
+        android:id="@+id/etxtApelido"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Apelido do produto"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_trovata" />
+
+    <EditText
+        android:id="@+id/etxtSubGrupo"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Subgrupo"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etxtApelido" />
+
+    <EditText
+        android:id="@+id/etxtPeso"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Peso liquido"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etxtSubGrupo" />
+
+    <EditText
+        android:id="@+id/etxtClasFical"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Classificacao fiscal"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etxtPeso" />
+
+    <EditText
+        android:id="@+id/etxtCodigoBarras"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Codigo de barras"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etxtClasFical" />
+
+    <EditText
+        android:id="@+id/etxtColecao"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Colecao"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etxtCodigoBarras" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="CADASTRAR"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCancelar"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnCancelar" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="CANCELAR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCadastrar"
+        app:layout_constraintTop_toBottomOf="@+id/etxtColecao" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="APELIDO:"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtApelido"
+        app:layout_constraintEnd_toStartOf="@+id/etxtApelido"
+        app:layout_constraintTop_toTopOf="@+id/etxtApelido" />
+</androidx.constraintlayout.widget.ConstraintLayout>
