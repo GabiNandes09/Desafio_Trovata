@@ -32,6 +32,10 @@ public class EmpresaDAO {
         dbHelper.close();
     }
 
+    //CADASTRAR - CREATE
+    public void cadastrarEmpresa(Empresa empresa){}
+
+    //LISTAR - READ
     public List<Empresa> getAllEmpresas(){
         List<Empresa> empresas = new ArrayList<>();
         Cursor cursor = database.query(DatabaseHelper.TABLE_EMPRESA, null, null,
@@ -57,5 +61,9 @@ public class EmpresaDAO {
         cursor.close();
         return empresas;
     }
+    //ATUALIZAR - UPDATE
+    public void atualizarEmpresa(Empresa empresa){}
+    //DELETAR - DELETE
+    public void deletarEmpresa(Empresa empresa){}
 
 }

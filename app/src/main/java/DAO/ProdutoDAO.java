@@ -31,10 +31,10 @@ public class ProdutoDAO {
         }
         database = dbHelper.getWritableDatabase();
     }
-
     public void close() {
         dbHelper.close();
     }
+
     //CRIAR - CREATE
     public void cadastrarProduto(Produto produto){
         ContentValues values = new ContentValues();
@@ -89,8 +89,11 @@ public class ProdutoDAO {
     //DELETAR - DELETE
     public void deletarProduto (Produto produto){
 
+
     }
 
+
+    //FERRAMENTAS PARA SPINNERS DE CADASTRO
     public List<Integer> getAllGrupos(){
         List<Integer> grupos = new ArrayList<>();
         Cursor cursor = null;
