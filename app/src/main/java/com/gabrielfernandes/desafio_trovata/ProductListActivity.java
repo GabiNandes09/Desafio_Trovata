@@ -87,6 +87,8 @@ public class ProductListActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ProductListActivity.this,
                         cadastrar_produto_activity_p1.class);
+                intent.putExtra("ID", bundle.getInt("ID"));
+                intent.putExtra("Nome", bundle.getString("Nome"));
                 startActivity(intent);
             }
         });

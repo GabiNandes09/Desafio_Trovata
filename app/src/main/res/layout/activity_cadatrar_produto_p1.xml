@@ -7,16 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".cadastrar_produto_activity_p1">
 
-    <Spinner
-        android:id="@+id/spGrupo"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
 
     <EditText
         android:id="@+id/etxtApelido"
@@ -54,7 +44,7 @@
         app:layout_constraintTop_toTopOf="@+id/spGrupo" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/etxtDecricao"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
@@ -75,7 +65,7 @@
         android:text="CANCELAR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnProximo"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+        app:layout_constraintTop_toBottomOf="@+id/spSituacao" />
 
     <TextView
         android:id="@+id/textView6"
@@ -83,9 +73,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="SITUACAO:"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner2"
-        app:layout_constraintEnd_toStartOf="@+id/spinner2"
-        app:layout_constraintTop_toTopOf="@+id/spinner2" />
+        app:layout_constraintBottom_toBottomOf="@+id/spSituacao"
+        app:layout_constraintEnd_toStartOf="@+id/spSituacao"
+        app:layout_constraintTop_toTopOf="@+id/spSituacao" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -114,9 +104,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="DESCRICAO:"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextText2"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText2"
-        app:layout_constraintTop_toTopOf="@+id/editTextText2" />
+        app:layout_constraintBottom_toBottomOf="@+id/etxtDecricao"
+        app:layout_constraintEnd_toStartOf="@+id/etxtDecricao"
+        app:layout_constraintTop_toTopOf="@+id/etxtDecricao" />
 
     <TextView
         android:id="@+id/textView4"
@@ -140,7 +130,7 @@
         app:layout_constraintTop_toTopOf="@+id/btnCancelar" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spSituacao"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
@@ -159,5 +149,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/etxtDecricao" />
 </androidx.constraintlayout.widget.ConstraintLayout>

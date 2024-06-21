@@ -33,9 +33,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="CLASSIFICACAO:"
-        app:layout_constraintBottom_toBottomOf="@+id/etxtClasFical"
-        app:layout_constraintEnd_toStartOf="@+id/etxtClasFical"
-        app:layout_constraintTop_toTopOf="@+id/etxtClasFical" />
+        app:layout_constraintBottom_toBottomOf="@+id/etxtClasFiscal"
+        app:layout_constraintEnd_toStartOf="@+id/etxtClasFiscal"
+        app:layout_constraintTop_toTopOf="@+id/etxtClasFiscal" />
 
     <TextView
         android:id="@+id/textView11"
@@ -111,7 +111,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etxtSubGrupo" />
 
     <EditText
-        android:id="@+id/etxtClasFical"
+        android:id="@+id/etxtClasFiscal"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
@@ -136,7 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etxtClasFical" />
+        app:layout_constraintTop_toBottomOf="@+id/etxtClasFiscal" />
 
     <EditText
         android:id="@+id/etxtColecao"

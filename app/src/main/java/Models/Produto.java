@@ -104,6 +104,29 @@ public class Produto {
         this.colecao = colecao;
     }
 
+    public Produto() {
+    }
+
+    public Produto(Integer empresa, Integer produto,
+                   String descricao, Integer apelido,
+                   Integer grupo, Integer subgrupo,
+                   String situacao, Double peso,
+                   Integer classificacao, Integer codigoDeBarras,
+                   Integer colecao, Image img) {
+        this.empresa = empresa;
+        this.produto = produto;
+        this.descricao = descricao;
+        this.apelido = apelido;
+        this.grupo = grupo;
+        this.subgrupo = subgrupo;
+        this.situacao = situacao;
+        this.peso = peso;
+        this.classificacao = classificacao;
+        this.codigoDeBarras = codigoDeBarras;
+        this.colecao = colecao;
+        this.img = img;
+    }
+
     @Override
     public String toString() {
         return descricao;
