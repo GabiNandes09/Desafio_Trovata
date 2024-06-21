@@ -16,7 +16,7 @@
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Codigo do produto"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

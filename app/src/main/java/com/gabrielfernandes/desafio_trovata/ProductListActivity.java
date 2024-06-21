@@ -34,6 +34,13 @@ public class ProductListActivity extends AppCompatActivity {
     Button btnAdicionar;
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        Bundle bundle = getIntent().getExtras();
+        new DatabaseTasks().execute(bundle.getInt("ID"));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
@@ -42,6 +49,7 @@ public class ProductListActivity extends AppCompatActivity {
         txtNomeEmpresa = findViewById(R.id.txtNomeEmpresa);
         rvProdutos = findViewById(R.id.rvProdutos);
         btnAdicionar = findViewById(R.id.btnAdicionar);
+
 
         String[] filtros = {"A - Z", "Z - A", "Código"};
         ArrayAdapter<String> adapterFiltro = new ArrayAdapter<>(this,
@@ -52,6 +60,7 @@ public class ProductListActivity extends AppCompatActivity {
         adapter = new ListaAdapter(new ArrayList<>());
 
         Bundle bundle = getIntent().getExtras();
+        new DatabaseTasks().execute(bundle.getInt("ID"));
         if (bundle != null){
             txtNomeEmpresa.setText(bundle.getString("Nome"));
             new DatabaseTasks().execute(bundle.getInt("ID"));

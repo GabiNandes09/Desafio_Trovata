@@ -1,5 +1,6 @@
 package com.gabrielfernandes.desafio_trovata;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -42,6 +43,8 @@ public class cadastrar_produto_activity_p1 extends AppCompatActivity {
             txtCodigoEmpresa = findViewById(R.id.txtCodigoEmpresa);
             spGrupo = findViewById(R.id.spGrupo);
             spSituacao = findViewById(R.id.spSituacao);
+            etxtApelido = findViewById(R.id.etxtApelido);
+            etxtDecricao = findViewById(R.id.etxtDecricao);
 
             Bundle bundle = getIntent().getExtras();
             txtCodigoEmpresa.setText(bundle.getString("Nome"));
@@ -50,17 +53,32 @@ public class cadastrar_produto_activity_p1 extends AppCompatActivity {
             new Puxarsituacao().execute();
 
             btnProximo.setOnClickListener(new View.OnClickListener() {
-
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(cadastrar_produto_activity_p1.this,
-                            cadastrar_produto_activity_p2.class);
-                    intent.putExtra("Empresa", txtCodigoEmpresa.getText());
-                    intent.putExtra("Produto", etxtApelido.getText());
-                    intent.putExtra("Decricao", etxtDecricao.getText());
-                    intent.putExtra("Grupo", spGrupo.getSelectedItem().toString());
-                    intent.putExtra("Situacao", spSituacao.getSelectedItem().toString());
-                    startActivity(intent);
+                    if((!String.valueOf(etxtApelido.getText()).isEmpty())&&(!String.valueOf(etxtDecricao).isEmpty())){
+                        Intent intent = new Intent(cadastrar_produto_activity_p1.this,
+                                cadastrar_produto_activity_p2.class);
+                        intent.putExtra("Empresa", bundle.getInt("ID"));
+                        intent.putExtra("Produto", Integer.parseInt(String.valueOf(etxtApelido.getText())));
+                        intent.putExtra("Descricao", String.valueOf(etxtDecricao.getText()));
+                        intent.putExtra("Grupo", Integer.parseInt(spGrupo.getSelectedItem().toString()));
+                        intent.putExtra("Situacao", spSituacao.getSelectedItem().toString());
+                        startActivity(intent);
+                    } else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(cadastrar_produto_activity_p1.this);
+                        builder.setTitle("INFORMACOES FALTANDO");
+                        builder.setMessage("Todos os campos devem ser preenchidos.");
+                        builder.setPositiveButton("OK", null);
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                    }
+
                 }
             });
             btnCancelar.setOnClickListener(new View.OnClickListener() {

@@ -38,16 +38,17 @@ public class ProdutoDAO {
     //CRIAR - CREATE
     public void cadastrarProduto(Produto produto){
         ContentValues values = new ContentValues();
-        values.put("produto", produto.getProduto());
-        values.put("descricao", produto.getDescricao());
-        values.put("apelido", produto.getApelido());
-        values.put("grupo", produto.getGrupo());
-        values.put("subgrupo", produto.getSubgrupo());
-        values.put("situacao", produto.getSituacao());
-        values.put("peso", produto.getPeso());
-        values.put("classificacao", produto.getClassificacao());
-        values.put("codigoDeBarras", produto.getCodigoDeBarras());
-        values.put("colecao", produto.getColecao());
+        values.put(COLUMN_PRODUTO_EMPRESA, produto.getEmpresa());
+        values.put(COLUMN_PRODUTO_PRODUTO, produto.getProduto());
+        values.put(COLUMN_PRODUTO_DESCRICAO, produto.getDescricao());
+        values.put(COLUMN_PRODUTO_APELIDO, produto.getApelido());
+        values.put(COLUMN_PRODUTO_GRUPO, produto.getGrupo());
+        values.put(COLUMN_PRODUTO_SUBGRUPO, produto.getSubgrupo());
+        values.put(COLUMN_PRODUTO_SITUACAO, produto.getSituacao());
+        values.put(COLUMN_PRODUTO_PESO, produto.getPeso());
+        values.put(COLUMN_PRODUTO_CLASSIFICACAO, produto.getClassificacao());
+        values.put(COLUMN_PRODUTO_CODIGOBARRAS, produto.getCodigoDeBarras());
+        values.put(COLUMN_PRODUTO_COLECAO, produto.getColecao());
 
         database.insert(TABLE_PRODUTO, null, values);
     }
